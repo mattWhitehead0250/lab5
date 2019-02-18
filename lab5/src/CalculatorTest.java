@@ -324,8 +324,8 @@ public class CalculatorTest {
      */
     public void parseAndExecuteTestInvalidCommand() throws AssertException
     {
-        String result = Calculator.parseAndExecute("foo 6");
-        Assert.assertEquals("Calculator Exception, message is: Improper Command", result);
+        String actual = Calculator.parseAndExecute("foo 6");
+        Assert.assertEquals("Calculator Exception, message is: Improper Command", actual);
     }
 
     /**
@@ -334,5 +334,7 @@ public class CalculatorTest {
     public void parseAndExecuteTestInvalidTokenLength() throws AssertException
     {
         // TODO: complete this test...
+    	String actual = Calculator.parseAndExecute("5 5 5 5");
+    	Assert.assertEquals("Calculator Exception, message is: Illegal Token Length", actual);
     }
 }
