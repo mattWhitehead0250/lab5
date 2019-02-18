@@ -173,7 +173,14 @@ public class CalculatorTest {
     public void calculateThreeTokensTestInvalidCommand() throws AssertException
     {
         // TODO: complete this test...
-    	
+    	try {
+    		Calculator.calculateThreeTokens(new String[] {"10", "%", "10"});
+    		Assert.fail("Illegal expression did not throw an Exception");
+    	} catch (CalculatorException e) {
+    		
+    	} catch (Exception e) {
+    		Assert.fail("Unexpected exception");
+    	}
     }
 
     /**
