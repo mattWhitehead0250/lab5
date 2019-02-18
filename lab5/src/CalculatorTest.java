@@ -65,6 +65,12 @@ public class CalculatorTest {
     public void calculateTwoTokensTestInvalidCommand() throws AssertException
     {
         // TODO: complete this test...
+    	try {
+    		Calculator.calculateTwoTokens(new String[] {"word", "20"});
+    		Assert.fail("expression did not throw an exception");
+    	}catch (Exception e) {
+    			Assert.fail("Unexpected exception");
+    		}
     	
     }
 
