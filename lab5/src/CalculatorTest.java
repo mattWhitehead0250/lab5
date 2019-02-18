@@ -68,7 +68,8 @@ public class CalculatorTest {
     	try {
     		Calculator.calculateTwoTokens(new String[] {"word", "20"});
     		Assert.fail("expression did not throw an exception");
-    	}catch (Exception e) {
+    	} catch (CalculatorException e){
+    	} catch (Exception e) {
     			Assert.fail("Unexpected exception");
     		}
     	
@@ -172,6 +173,7 @@ public class CalculatorTest {
     public void calculateThreeTokensTestInvalidCommand() throws AssertException
     {
         // TODO: complete this test...
+    	
     }
 
     /**

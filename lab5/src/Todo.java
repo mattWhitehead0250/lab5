@@ -9,7 +9,8 @@ Tasks:
 2. finish calculateThreeTokens
 3. finish execute()
 4. finish parseAndExecute()
-5. finish two tokens valid halve
+5. finish two tokens valid halve test
+6. finish all other tests
 
 Estimated Time (minutes):
 1. 5
@@ -17,11 +18,13 @@ Estimated Time (minutes):
 3. 20
 4. 10
 5. 20
+6. 30
 
 Actual Time (minutes):
 1. ~10
 2. ~8
 3. ~5
 4. ~10
-5. ~
+5. ~5
+6. 
 */}
