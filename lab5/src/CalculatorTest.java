@@ -189,6 +189,12 @@ public class CalculatorTest {
     public void executeTestValidQuit() throws AssertException
     {
         // TODO: complete this test...
+    	try {
+    		Calculator.execute(new String[] {"quit"});
+    	} catch (Exception e) {
+    		Assert.fail("Unexpected exception");
+    	}
+    	
     }
 
     /**
