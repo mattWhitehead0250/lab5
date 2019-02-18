@@ -262,7 +262,7 @@ public class CalculatorTest {
     		Calculator.execute(new String[0]);
     		Assert.fail("no exception thrown");
     	} catch (CalculatorException e) {
-    		Assert.assertEquals("Illegal Token length", e.getMessage());
+    		Assert.assertEquals("Illegal Token Length", e.getMessage());
     	} catch (Exception e){
     		Assert.fail("unexpected exception");
     	}
@@ -272,7 +272,7 @@ public class CalculatorTest {
     	try {
     		Calculator.execute(new String[] {"test","test","test","test"});
     	} catch (CalculatorException e) {
-    		Assert.assertEquals("Illegal Token length", e.getMessage());
+    		Assert.assertEquals("Illegal Token Length", e.getMessage());
     	} catch (Exception e) {
     		Assert.fail("unexpected exception");
     	}
@@ -319,7 +319,7 @@ public class CalculatorTest {
     public void parseAndExecuteTestInvalidCommand() throws AssertException
     {
         String result = Calculator.parseAndExecute("foo 6");
-        Assert.assertEquals("Calculator Exception, message is: Illegal Command", result);
+        Assert.assertEquals("Calculator Exception, message is: Improper Command", result);
     }
 
     /**
