@@ -312,6 +312,11 @@ public class CalculatorTest {
     public void parseAndExecuteTestInvalidNumber() throws AssertException
     {
         // TODO: complete this test...
+    	String testOne = Calculator.parseAndExecute("a + 5");
+    	Assert.assertEquals("Input number cannot be parsed to an int. Please try again.", testOne);
+    	String testTwo = Calculator.parseAndExecute("a 5");
+    	Assert.assertEquals("Calculator Exception, message is: Improper Command", testTwo);
+    	
     }
 
     /**
