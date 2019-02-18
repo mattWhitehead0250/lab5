@@ -139,6 +139,24 @@ public class Calculator
 		switch(tokens.length)
 		{
 		// TODO: complete this...
+		case 0: {
+			throw new CalculatorException("Illegal Token Length");
+		}
+		case 1: {
+			if (!tokens[0].equalsIgnoreCase("quit")) {
+				throw new CalculatorException("Improper command");
+			}
+			return Integer.MIN_VALUE;
+		}
+		case 2: {
+			return calculateTwoTokens(tokens);
+		}
+		case 3: {
+			return calculateThreeTokens(tokens);
+		}
+		default: {
+			throw new CalculatorException("Illegal Token Length");
+		}
 		}
 
 	}
@@ -175,7 +193,27 @@ public class Calculator
 	public static String parseAndExecute(String input)
 	{
 		// TODO: complete this...
-		// Hint: you should try and call execute(). If execute encounters an error, it will throw an exception. This
-		// method will catch those exceptions and respond accordingly.
+		String[] tokenizedInput= input.split(" ");
+		String output;
+		int result = 0;
+		
+		if (input.equalsIgnoreCase("quit")) {
+			return input;
+		}
+		
+		try {
+			result = execute(tokenizedInput);
+		} catch (CalculatorException e){
+			output = "Calculator Exception, message is: " + e.getMessage();
+			return output;
+		} catch (NumberFormatException e) {
+			output = "Input number cannot be parsed to an int. Please try again.";
+			return output;
+		} catch (ArithmeticException e) {
+			output = "Attempted to divide by 0. Please try again.";
+			return output;
+		}
+		output = "The result is: " + result;
+		return output;
 	}
 }
