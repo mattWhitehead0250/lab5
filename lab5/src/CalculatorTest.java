@@ -219,6 +219,14 @@ public class CalculatorTest {
     public void executeTestValidThreeTokens() throws AssertException
     {
         // TODO: complete this test...
+    	int actual;
+    	int expected = 6;
+    	try {
+    		actual = Calculator.execute(new String[] {"2","+","4"});
+    		Assert.assertEquals(expected, actual);
+    	} catch(Exception e) {
+    		Assert.fail("Legal expression threw an Exception: " + e.getMessage());
+    	}
     }
 
     /**
