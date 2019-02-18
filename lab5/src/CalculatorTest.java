@@ -302,7 +302,8 @@ public class CalculatorTest {
     public void parseAndExecuteTestDivideByZero() throws AssertException
     {
         // TODO: complete this test...
-    	
+    	String result = Calculator.parseAndExecute("5 / 0");
+    	Assert.assertEquals("Attempted to divide by 0. Please try again.", result);
     }
 
     /**
