@@ -243,7 +243,7 @@ public class CalculatorTest {
         {
             // We expect the function to throw a CalculatorException.
             // Check to make sure the CalculatorException has the correct message and type:
-            Assert.assertEquals("Illegal Command", e.getMessage());
+            Assert.assertEquals("Improper command", e.getMessage());
         }
         catch (Exception e)
         {
@@ -258,9 +258,24 @@ public class CalculatorTest {
     {
         // Token length is 0:
         // TODO: complete this test...
+    	try {
+    		Calculator.execute(new String[0]);
+    		Assert.fail("no exception thrown");
+    	} catch (CalculatorException e) {
+    		Assert.assertEquals("Illegal Token length", e.getMessage());
+    	} catch (Exception e){
+    		Assert.fail("unexpected exception");
+    	}
 
         // Token length is > 3:
         // TODO: complete this test...
+    	try {
+    		Calculator.execute(new String[] {"test","test","test","test"});
+    	} catch (CalculatorException e) {
+    		Assert.assertEquals("Illegal Token length", e.getMessage());
+    	} catch (Exception e) {
+    		Assert.fail("unexpected exception");
+    	}
     }
 
     /**
@@ -287,6 +302,7 @@ public class CalculatorTest {
     public void parseAndExecuteTestDivideByZero() throws AssertException
     {
         // TODO: complete this test...
+    	
     }
 
     /**
